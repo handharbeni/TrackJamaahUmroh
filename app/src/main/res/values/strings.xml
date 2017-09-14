@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">TrackJamaahUmroh</string>
+
+    <string name="placeholder_nama">Name</string>
+    <string name="placeholder_alamat">Address</string>
+    <string name="placeholder_notelp">Handphone</string>
+    <string name="placeholder_username">Username / Email</string>
+    <string name="placeholder_password">Password</string>
+    <string name="placeholder_repeatpassword">Confirm Password</string>
+    <string name="placeholder_oldpassword">Old Password</string>
+
+    <string name="placeholder_buttonsignin">Signin</string>
+    <string name="placeholder_buttonsignout">Signout</string>
+    <string name="placeholder_buttonsignup">Signup</string>
+
+    <string name="placeholder_dosignin">Already have an account? Signin here</string>
+    <string name="placeholder_dosignup">Doesnt have an account? Signup here</string>
 </resources>
