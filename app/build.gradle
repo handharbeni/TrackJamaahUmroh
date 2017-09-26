@@ -3,9 +3,9 @@ apply plugin: 'realm-android'
 android {
     signingConfigs {
         config {
-            keyAlias 'keyRelease'
+            keyAlias 'keySignin'
             keyPassword 'nollimakali'
-            storeFile file('/home/mhandharbeni/Documents/AndroidProject/TNBGApps/keystore.jks')
+            storeFile file('/home/mhandharbeni/Documents/AndroidProject/TrackJamaahUmroh/KeySignin.jks')
             storePassword 'nollimakali'
         }
     }
@@ -42,4 +42,6 @@ dependencies {
 
     compile 'com.h6ah4i.android.tablayouthelper:tablayouthelper:0.8.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.thorbenprimke:realm-recyclerview:0.9.25'
 }

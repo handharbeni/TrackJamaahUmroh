@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">DatabaseModule</string>
-    <!--<string name="module_server">http://192.168.1.100/trackmenuapi/</string>-->
-    <string name="module_server">http://burgertahumalang.com/dev/api/</string>
-    <string name="endpointmenu">/users/menu</string>
-    <string name="endpointoutlet">/public/list?type=outlet&amp;access=true</string>
-    <string name="endpointresto"></string>
-    <string name="endpointkurir">/users/tracking</string>
-    <string name="endpointorder">/users/order?token=</string>
-    <string name="endpointfeedeliv">/public/tools_value?access=true</string>
+    <string name="module_server">http://192.168.1.100/trackjamaahapi/</string>
+    <string name="endpoint_listgrup">user/listgrup</string>
+    <string name="endpoint_creategrup">user/creategrup</string>
+    <string name="endpoint_updategrup">user/updategrup</string>
+    <string name="endpoint_deletegrup">user/deletegrup</string>
+    <string name="endpoint_sendmessagegrup">user/sendmessage</string>
+    <string name="endpoint_senglocationgrup">user/sendlocation</string>
+    <string name="endpoint_invitemembergrup">user/invitemember</string>
+    <string name="endpoint_konfimasimasukgrup">user/confirmgrup</string>
+
+    <!--NEW API-->
+    <string name="endpoint_listcontact">user/listcontact</string>
+    <string name="endpoint_getchatgrup">user/listchat</string>
+    <!--<string name="endpoint_getlocationgrup">user/listgrup</string>-->
 </resources>

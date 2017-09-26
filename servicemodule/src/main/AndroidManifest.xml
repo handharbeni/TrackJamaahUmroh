@@ -5,10 +5,9 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
         <service android:name=".service.MainService"/>
-        <service android:name=".service.intentservice.MenuService"/>
-        <service android:name=".service.intentservice.OutletService"/>
-        <service android:name=".service.intentservice.OrderService"/>
-        <service android:name=".service.intentservice.TrackingService"/>
+        <service android:name=".service.intentservice.GrupService"/>
+        <service android:name=".service.intentservice.ChatService"/>
+        <service android:name=".service.intentservice.ContactService"/>
     </application>
 
 </manifest>

@@ -10,10 +10,9 @@ import android.os.IBinder;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import illiyin.mhandharbeni.servicemodule.service.intentservice.MenuService;
-import illiyin.mhandharbeni.servicemodule.service.intentservice.OrderService;
-import illiyin.mhandharbeni.servicemodule.service.intentservice.OutletService;
-import illiyin.mhandharbeni.servicemodule.service.intentservice.TrackingService;
+import illiyin.mhandharbeni.servicemodule.service.intentservice.ChatService;
+import illiyin.mhandharbeni.servicemodule.service.intentservice.ContactService;
+import illiyin.mhandharbeni.servicemodule.service.intentservice.GrupService;
 
 /**
  * Created by root on 17/07/17.
@@ -65,20 +64,16 @@ public class MainService extends Service {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (!checkIsRunning(MenuService.class)){
-                        Intent is = new Intent(getBaseContext(), MenuService.class);
+                    if (!checkIsRunning(GrupService.class)){
+                        Intent is = new Intent(getBaseContext(), GrupService.class);
                         startService(is);
                     }
-                    if (!checkIsRunning(OrderService.class)){
-                        Intent is = new Intent(getBaseContext(), OrderService.class);
+                    if (!checkIsRunning(ChatService.class)){
+                        Intent is = new Intent(getBaseContext(), ChatService.class);
                         startService(is);
                     }
-                    if (!checkIsRunning(OutletService.class)){
-                        Intent is = new Intent(getBaseContext(), OutletService.class);
-                        startService(is);
-                    }
-                    if (!checkIsRunning(TrackingService.class)){
-                        Intent is = new Intent(getBaseContext(), TrackingService.class);
+                    if (!checkIsRunning(ContactService.class)){
+                        Intent is = new Intent(getBaseContext(), ContactService.class);
                         startService(is);
                     }
                 }

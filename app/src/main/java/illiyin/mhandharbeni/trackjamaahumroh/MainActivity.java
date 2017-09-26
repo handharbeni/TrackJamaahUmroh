@@ -1,6 +1,9 @@
 package illiyin.mhandharbeni.trackjamaahumroh;
 
 
+import android.Manifest;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +20,26 @@ public class MainActivity extends AppCompatActivity implements SessionListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String[] permissions = new String[11];
+        permissions[0] = Manifest.permission.CAMERA;
+        permissions[1] = Manifest.permission.INTERNET;
+        permissions[2] = Manifest.permission.WAKE_LOCK;
+        permissions[3] = Manifest.permission.LOCATION_HARDWARE;
+        permissions[4] = Manifest.permission.ACCESS_COARSE_LOCATION;
+        permissions[5] = Manifest.permission.ACCESS_FINE_LOCATION;
+        permissions[6] = Manifest.permission.READ_PHONE_STATE;
+        permissions[7] = Manifest.permission.ACCESS_NETWORK_STATE;
+        permissions[8] = Manifest.permission.ACCESS_WIFI_STATE;
+        permissions[9] = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        permissions[10] = Manifest.permission.READ_EXTERNAL_STORAGE;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    permissions,
+                    5
+            );
+        }
         session = new Session(this, this);
 
         setContentView(R.layout.activity_main);
@@ -28,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements SessionListener {
     private void checkSession(){
 //        0 = belum login
 //        1 = sudah login / sudah ada token
-        loginState = session.getCustomParams("LoginState", 0);
+//        loginState = session.getCustomParams("LoginState", 0);
+        loginState = session.getCustomParams("LoginState", 1);
         setPage(loginState);
 
     }

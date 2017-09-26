@@ -6,11 +6,12 @@
     <color name="colorAccent">#FF4081</color>
 -->
 
-    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimary">@color/blueAccent</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#ffffff</color>
     <color name="textWhite">#ffffff</color>
     <color name="textBlack">#000000</color>
     <color name="blueCustom">#33C6A0</color>
-    <color name="greyCustom">#4E4E4E</color>
+    <color name="greyCustom">#f1f1f1</color>
+    <color name="blueAccent">#fe04a9e0</color>
 </resources>
