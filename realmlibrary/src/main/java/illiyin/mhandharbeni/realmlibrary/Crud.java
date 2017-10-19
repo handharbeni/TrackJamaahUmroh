@@ -3,8 +3,10 @@ package illiyin.mhandharbeni.realmlibrary;
 import android.content.Context;
 
 import illiyin.mhandharbeni.crudrealmmodul.CRUDRealm;
+import io.realm.Case;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 /**
  * Created by root on 17/07/17.
@@ -38,6 +40,28 @@ public class Crud {
     public RealmResults read(String key, Integer[] value){
         return crudRealm.read(key, value);
     }
+    public RealmResults like(String key, String filter, Case casing){
+        return crudRealm.like(key, filter, casing);
+    }
+    public RealmResults contains(String key, String filter){
+        return crudRealm.contains(key, filter);
+    }
+    public RealmResults readSorted(String keySorted, Sort sort){
+        return crudRealm.read().sort(keySorted, sort);
+    }
+    public RealmResults readSorted(String key, String value, String keySorted, Sort sort){
+        return crudRealm.read(key, value).sort(keySorted, sort);
+    }
+    public RealmResults readSorted(String key, String[] value, String keySorted, Sort sort){
+        return crudRealm.read(key, value).sort(keySorted, sort);
+    }
+    public RealmResults readSorted(String key, Integer value, String keySorted, Sort sort){
+        return crudRealm.read(key, value).sort(keySorted, sort);
+    }
+    public RealmResults readSorted(String key, Integer[] value, String keySorted, Sort sort){
+        return crudRealm.read(key, value).sort(keySorted, sort);
+    }
+
     public RealmObject getRealmObject(String key, String value){
         RealmObject objectUpdate = crudRealm.setObjectUpdate(key, value);
         return objectUpdate;
@@ -53,7 +77,10 @@ public class Crud {
         crudRealm.commitObject();
     }
     public void closeRealm(){
-        crudRealm.closeRealm();
+        if (crudRealm != null) {
+            crudRealm.closeRealm();
+            crudRealm = null;
+        }
     }
     public void update(RealmObject realmObject){
         crudRealm.update(realmObject);

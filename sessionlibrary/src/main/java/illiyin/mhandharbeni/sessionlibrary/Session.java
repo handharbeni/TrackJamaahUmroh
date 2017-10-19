@@ -84,6 +84,12 @@ public class Session implements EncryptedPreferences.OnSharedPreferenceChangeLis
                 .putString(STATUS, status)
                 .apply();
     }
+    public String encryptString(String value){
+        return encryptedPreferences.getUtils().encryptStringValue(value);
+    }
+    public String decryptString(String value){
+        return encryptedPreferences.getUtils().decryptStringValue(value);
+    }
     public Boolean checkSession(){
         Log.d(TAG, "checkSession: "+encryptedPreferences.getUtils().decryptStringValue(encryptedPreferences.getString(KEY, defaultKey)));
         if (encryptedPreferences.getUtils().decryptStringValue(encryptedPreferences.getString(KEY, defaultKey)) != null){

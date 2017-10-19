@@ -8,9 +8,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.mancj.slideup.SlideUp;
+import com.mancj.slideup.SlideUpBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +41,7 @@ public class GroupFragment extends Fragment implements RealmRecyclerView.OnRefre
     GrupAdapter grupAdapter;
     RealmRecyclerView rvgrup;
     View destination;
+    private SlideUp slideUp;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         grupModel = new GrupModel();
@@ -54,9 +59,8 @@ public class GroupFragment extends Fragment implements RealmRecyclerView.OnRefre
         rvgrup.setOnRefreshListener(this);
     }
     private void fetch_adapter(){
-        Realm realm = Realm.getInstance(Realm.getDefaultConfiguration());
-        RealmResults<GrupModel> newsModelx = realm.where(GrupModel.class).findAllSorted("id", Sort.DESCENDING);
-        grupAdapter = new GrupAdapter(getActivity().getApplicationContext(), newsModelx, true);
+        RealmResults results = crud.readSorted("id", Sort.DESCENDING);
+        grupAdapter = new GrupAdapter(getActivity().getApplicationContext(), results, true);
         rvgrup.setAdapter(grupAdapter);
     }
     @Override

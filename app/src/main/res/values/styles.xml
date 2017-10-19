@@ -38,21 +38,35 @@
         <item name="android:itemBackground">@color/greyCustom</item>
         <item name="android:textColorPrimary">@color/textBlack</item>
     </style>
+
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/greyCustom</item>
     </style>
+
     <style name="AppTheme.SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/greyCustom</item>
         <!--        <item name="queryBackground">...</item>
                 <item name="submitBackground">...</item>-->
 
     </style>
+
     <style name="TextLabel" parent="TextAppearance.AppCompat">
-        <!-- Hint color and label color in FALSE state -->
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/textBlack</item>
+        <item name="errorTextAppearance">@style/AppTheme.TextErrorAppearance</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
+        <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
         <item name="android:textColorHint">@color/textBlack</item>
         <item name="android:textSize">20sp</item>
-        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
         <item name="colorControlNormal">@color/textBlack</item>
         <item name="colorControlActivated">@color/blueCustom</item>
     </style>
+    <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
+        <!-- Error message appearance here -->
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

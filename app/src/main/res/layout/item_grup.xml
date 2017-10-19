@@ -6,8 +6,8 @@
         android:id="@+id/image"
         android:src="@color/greyCustom"
         android:layout_weight="1"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="72dp"
+        android:layout_height="72dp" />
     <TextView
         android:id="@+id/nama"
         android:padding="5dp"

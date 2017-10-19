@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements SessionListener {
 //        0 = belum login
 //        1 = sudah login / sudah ada token
 //        loginState = session.getCustomParams("LoginState", 0);
-        loginState = session.getCustomParams("LoginState", 1);
+        loginState = session.getCustomParams("LoginState", 0);
         setPage(loginState);
 
     }
@@ -79,11 +79,6 @@ public class MainActivity extends AppCompatActivity implements SessionListener {
     }
     @Override
     public void sessionChange() {
-
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
+        checkSession();
     }
 }

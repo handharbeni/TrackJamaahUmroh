@@ -1,8 +1,7 @@
 package illiyin.mhandharbeni.trackjamaahumroh.main.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -10,13 +9,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import org.w3c.dom.Text;
-
-import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 import illiyin.mhandharbeni.databasemodule.GrupModel;
 import illiyin.mhandharbeni.trackjamaahumroh.R;
+import illiyin.mhandharbeni.trackjamaahumroh.main.fragment.sub.grup.MapsGrup;
 import io.realm.RealmBasedRecyclerViewAdapter;
 import io.realm.RealmResults;
 import io.realm.RealmViewHolder;
@@ -41,6 +37,14 @@ public class GrupAdapter extends RealmBasedRecyclerViewAdapter<GrupModel, GrupAd
         final GrupModel gm = realmResults.get(i);
         myHolder.nama.setText(gm.getNama_grup());
         Glide.with(getContext()).load(gm.getNama_grup()).into(myHolder.image);
+        myHolder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), MapsGrup.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getContext().startActivity(i);
+            }
+        });
     }
 
     public class MyHolder extends RealmViewHolder {

@@ -14,4 +14,6 @@
     <color name="blueCustom">#33C6A0</color>
     <color name="greyCustom">#f1f1f1</color>
     <color name="blueAccent">#fe04a9e0</color>
+    <color name="grey200">#cecece</color>
+    <color name="dimBg">#bf000000</color>
 </resources>

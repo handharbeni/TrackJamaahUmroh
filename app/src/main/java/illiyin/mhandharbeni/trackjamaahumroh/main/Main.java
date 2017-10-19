@@ -1,5 +1,6 @@
 package illiyin.mhandharbeni.trackjamaahumroh.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,8 @@ import com.h6ah4i.android.tablayouthelper.TabLayoutHelper;
 
 import illiyin.mhandharbeni.trackjamaahumroh.R;
 import illiyin.mhandharbeni.trackjamaahumroh.main.adapter.TabsPagerAdapter;
+import illiyin.mhandharbeni.trackjamaahumroh.main.fragment.sub.contact.AddContact;
+import illiyin.mhandharbeni.trackjamaahumroh.main.fragment.sub.grup.CreateGroup;
 
 /**
  * Created by root on 9/13/17.
@@ -37,6 +40,20 @@ public class Main extends Fragment{
     private void fetchFab(){
         fabgrup = v.findViewById(R.id.fabgrup);
         fabcontact = v.findViewById(R.id.fabcontact);
+        fabgrup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity().getApplicationContext(), CreateGroup.class);
+                getActivity().startActivity(i);
+            }
+        });
+        fabcontact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity().getApplicationContext(), AddContact.class);
+                getActivity().startActivity(i);
+            }
+        });
     }
     private void changeFab(int position){
         switch (position){

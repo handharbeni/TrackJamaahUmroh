@@ -31,10 +31,9 @@ public class ContactFragment extends Fragment {
     ContactModel contactModel;
     Crud crud;
 
-    List<ContactModel> contactList;
     ContactAdapter contactAdapter;
     RealmRecyclerView rvcontact;
-    View destination;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contactModel = new ContactModel();
@@ -53,8 +52,7 @@ public class ContactFragment extends Fragment {
     }
 
     private void fetch_adapter(){
-        Realm realm = Realm.getInstance(Realm.getDefaultConfiguration());
-        RealmResults<ContactModel> contactModels = realm.where(ContactModel.class).findAllSorted("id", Sort.DESCENDING);
+        RealmResults contactModels = crud.readSorted("id", Sort.DESCENDING);
         contactAdapter = new ContactAdapter(getActivity().getApplicationContext(), contactModels, true);
         rvcontact.setAdapter(contactAdapter);
     }

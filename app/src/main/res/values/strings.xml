@@ -15,4 +15,15 @@
 
     <string name="placeholder_dosignin">Already have an account? Signin here</string>
     <string name="placeholder_dosignup">Doesnt have an account? Signup here</string>
+    <string name="title_activity_maps_grup">Map</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="placeholder_masaaktif">Masa Aktif</string>
+    <string name="placeholder_create">Buat</string>
+    <string name="placeholder_add">Tambahkan</string>
+    <string name="placeholder_listmember">Daftar Anggota</string>
 </resources>
